@@ -1,0 +1,14 @@
+/home/grosedj1/support/billie/c-sharp/integer-array/obj/Debug/net10.0/integer-array.GeneratedMSBuildEditorConfig.editorconfig
+/home/grosedj1/support/billie/c-sharp/integer-array/obj/Debug/net10.0/integer-array.AssemblyInfoInputs.cache
+/home/grosedj1/support/billie/c-sharp/integer-array/obj/Debug/net10.0/integer-array.AssemblyInfo.cs
+/home/grosedj1/support/billie/c-sharp/integer-array/obj/Debug/net10.0/integer-array.csproj.CoreCompileInputs.cache
+/home/grosedj1/support/billie/c-sharp/integer-array/bin/Debug/net10.0/integer-array
+/home/grosedj1/support/billie/c-sharp/integer-array/bin/Debug/net10.0/integer-array.deps.json
+/home/grosedj1/support/billie/c-sharp/integer-array/bin/Debug/net10.0/integer-array.runtimeconfig.json
+/home/grosedj1/support/billie/c-sharp/integer-array/bin/Debug/net10.0/integer-array.dll
+/home/grosedj1/support/billie/c-sharp/integer-array/bin/Debug/net10.0/integer-array.pdb
+/home/grosedj1/support/billie/c-sharp/integer-array/obj/Debug/net10.0/integer-array.dll
+/home/grosedj1/support/billie/c-sharp/integer-array/obj/Debug/net10.0/refint/integer-array.dll
+/home/grosedj1/support/billie/c-sharp/integer-array/obj/Debug/net10.0/integer-array.pdb
+/home/grosedj1/support/billie/c-sharp/integer-array/obj/Debug/net10.0/integer-array.genruntimeconfig.cache
+/home/grosedj1/support/billie/c-sharp/integer-array/obj/Debug/net10.0/ref/integer-array.dll

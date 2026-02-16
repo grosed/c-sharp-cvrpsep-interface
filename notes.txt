@@ -1,0 +1,27 @@
+
+link to some basics of c-sharp programming on ubuntu
+----------------------------------------------------
+
+
+https://documentation.ubuntu.com/ubuntu-for-developers/tutorials/dotnet-use/
+
+
+
+simple print example on unix
+----------------------------
+https://stackoverflow.com/questions/11425202/is-it-possible-to-call-a-c-function-from-c-net
+
+create a new console application
+-------------------------------
+
+dotnet new console
+
+
+building an .so from c file on linux
+------------------------------------
+
+gcc -shared -o libprint.so print.c
+
+NOTE - for this to available in c-sharp need to add location of .so to LD_LIBRARY_PATH
+
+

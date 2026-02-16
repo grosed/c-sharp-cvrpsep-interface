@@ -1,0 +1,14 @@
+
+int process_int_array(int* arr, int size)
+{
+  int sum = 0;
+  printf("Received array of size %d\\n", size);
+  for (int i = 0; i < size; i++)
+    {
+      sum += arr[i];
+      // You can modify the array in C, and changes will be
+      // reflected in C#
+     arr[i] = arr[i] * 2; 
+    }
+    return sum;
+}
