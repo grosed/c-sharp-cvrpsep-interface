@@ -1,11 +1,27 @@
 #include <cstdlib>
 #include <cstdio>
 
+
+#include <stdlib.h>
+#include <stdio.h>
+#include "memmod.h"
+#include "basegrph.h"
+#include "sort.h"
+#include "cnstrmgr.h"
+#include "cutbase.h"
+#include "compcuts.h"
+#include "compress.h"
+#include "fcapfix.h"
+#include "grsearch.h"
+
+
 #include "capsep.h"
 #include "cnstrmgr.h"
 
-extern "C" __declspec(dllexport)
-int CAPSEP_SeparateCapCuts_Wrapper(
+#include <iostream>
+
+extern "C" // __declspec(dllexport)
+void CAPSEP_SeparateCapCuts_Wrapper(
     int NoOfCustomers,
     int* Demand,
     int CAP,
@@ -17,6 +33,7 @@ int CAPSEP_SeparateCapCuts_Wrapper(
     double EpsForIntegrality
 )
 {
+  std::cout << "in CAPSEP_SeparateCapCuts_Wrapper" << std::endl;
     CnstrMgrPointer ExistingCutsCMP = NULL;
     CnstrMgrPointer CutsCMP = NULL;
 
@@ -26,6 +43,7 @@ int CAPSEP_SeparateCapCuts_Wrapper(
     char IntegerAndFeasible = 0;
     double MaxViolation = 0.0;
 
+    std::cout << "calling CAPSEP_SeparateCapCuts" << std::endl;
     // --- Call CVRPSEP ---
     CAPSEP_SeparateCapCuts(
         NoOfCustomers,
@@ -42,6 +60,8 @@ int CAPSEP_SeparateCapCuts_Wrapper(
         &MaxViolation,
         CutsCMP
     );
+
+    std::cout << "returned from call to CAPSEP_SeparateCapCuts" << std::endl;
 
     
     int nCuts = CutsCMP->Size;
@@ -63,4 +83,6 @@ int CAPSEP_SeparateCapCuts_Wrapper(
     CMGR_FreeMemCMgr(&ExistingCutsCMP);
     CMGR_FreeMemCMgr(&CutsCMP);
 
+
+    
 }
