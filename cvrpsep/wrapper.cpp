@@ -65,6 +65,7 @@ void CAPSEP_SeparateCapCuts_Wrapper(
 
     
     int nCuts = CutsCMP->Size;
+    std::cout << "nCuts is : " << nCuts << std::endl;
 
     int pos = 0;
 
@@ -78,6 +79,15 @@ void CAPSEP_SeparateCapCuts_Wrapper(
 
         int sz = cut->IntListSize;
         int* S = cut->IntList;
+
+	
+        for(int i = 0; i < sz; i++)
+	  {
+	    std::cout << *S << std::endl;
+	    S++;
+	  }
+	
+	
     }
 
     CMGR_FreeMemCMgr(&ExistingCutsCMP);
