@@ -79,7 +79,7 @@ void CAPSEP_SeparateCapCuts_Wrapper(
 
         int sz = cut->IntListSize;
         int* S = cut->IntList;
-
+        S++;
 	
         for(int i = 0; i < sz; i++)
 	  {

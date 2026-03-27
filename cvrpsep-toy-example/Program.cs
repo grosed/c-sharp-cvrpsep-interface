@@ -28,13 +28,22 @@ public class Program
 
 	// from billie - but with changes of variable names
 	int NoCustomers = 5; //does not include depot
-	int[] Demand = [2, 2, 2, 2, 2];
+	int[] Demandin = [2, 2, 2, 2, 2];
+	int[] Demand = new int[Demandin.Length+1];
+	Array.Copy(Demandin,0,Demand,1,Demandin.Length);
 	int CAP = 4;
 	int NoOfEdges = 15;
-	int[] EdgeTail = [0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4];
-	int[] EdgeHead = [1, 2, 3, 4, 5, 2, 3, 4, 5, 3, 4, 5, 4, 5, 5];
-	double[] EdgeX = [0.5, 0.5, 0.5, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0];
-
+	// int[] EdgeTail = [99,0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4];
+	int[] EdgeTailin = [6, 6, 6, 6, 6, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4];
+	int[] EdgeTail = new int[EdgeTailin.Length+1];
+	Array.Copy(EdgeTailin,0,EdgeTail,1,EdgeTailin.Length);
+	int[] EdgeHeadin = [1, 2, 3, 4, 5, 2, 3, 4, 5, 3, 4, 5, 4, 5, 5];
+	int[] EdgeHead = new int[EdgeHeadin.Length+1];
+	Array.Copy(EdgeHeadin,0,EdgeHead,1,EdgeHeadin.Length);
+	double[] EdgeXin = [0.5, 0.5, 0.5, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+	double[] EdgeX = new double[EdgeXin.Length+1];
+	Array.Copy(EdgeXin,0,EdgeX,1,EdgeXin.Length);
+	
 	// extra stuf not provided by billie - guessing what I should put here !!
 
 	int MaxNoOfCuts = 100;
