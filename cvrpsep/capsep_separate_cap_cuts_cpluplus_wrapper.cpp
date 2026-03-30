@@ -18,10 +18,9 @@
 #include "capsep.h"
 #include "cnstrmgr.h"
 
-#include <iostream>
 
 extern "C" // __declspec(dllexport)
-void CAPSEP_SeparateCapCuts_Wrapper(
+void CAPSEP_SeparateCapCuts_CPlusPlus_Wrapper(
     int NoOfCustomers,
     int* Demand,
     int CAP,
@@ -30,10 +29,10 @@ void CAPSEP_SeparateCapCuts_Wrapper(
     int* EdgeHead,
     double* EdgeX,
     int MaxNoOfCuts,
-    double EpsForIntegrality
+    double EpsForIntegrality,
+    int* Results
 )
 {
-  std::cout << "in CAPSEP_SeparateCapCuts_Wrapper" << std::endl;
     CnstrMgrPointer ExistingCutsCMP = NULL;
     CnstrMgrPointer CutsCMP = NULL;
 
@@ -43,7 +42,6 @@ void CAPSEP_SeparateCapCuts_Wrapper(
     char IntegerAndFeasible = 0;
     double MaxViolation = 0.0;
 
-    std::cout << "calling CAPSEP_SeparateCapCuts" << std::endl;
     // --- Call CVRPSEP ---
     CAPSEP_SeparateCapCuts(
         NoOfCustomers,
@@ -61,14 +59,13 @@ void CAPSEP_SeparateCapCuts_Wrapper(
         CutsCMP
     );
 
-    std::cout << "returned from call to CAPSEP_SeparateCapCuts" << std::endl;
-
     
     int nCuts = CutsCMP->Size;
-    std::cout << "nCuts is : " << nCuts << std::endl;
 
-    int pos = 0;
-
+    // int pos = 0;
+    int cursor = 0;
+    Results[cursor] = nCuts;
+    cursor++;
     for (int c = 0; c < nCuts; ++c)
     {
         CnstrPointer cut = CutsCMP->CPL[c];
@@ -80,11 +77,13 @@ void CAPSEP_SeparateCapCuts_Wrapper(
         int sz = cut->IntListSize;
         int* S = cut->IntList;
         S++;
-	
+	Results[cursor] = sz;
+	cursor++;
         for(int i = 0; i < sz; i++)
 	  {
-	    std::cout << *S << std::endl;
+	    Results[cursor] = *S;
 	    S++;
+	    cursor++;
 	  }
 	
 	
@@ -92,7 +91,4 @@ void CAPSEP_SeparateCapCuts_Wrapper(
 
     CMGR_FreeMemCMgr(&ExistingCutsCMP);
     CMGR_FreeMemCMgr(&CutsCMP);
-
-
-    
 }
