@@ -40,8 +40,6 @@ dotnet run
 
 ------------------------
 
-gcc -fPIC -shared -o libcvrpsep_interface.so basegrph.cpp brnching.cpp combsep.cpp cutbase.cpp fcits.cpp hpmstar.cpp memmod.cpp newhtour.cpp strngcmp.cpp binpack.cpp capsep.cpp compcuts.cpp fcapfix.cpp glmsep.cpp htoursep.cpp mstarsep.cpp sort.cpp twomatch.cpp blocks.cpp cnstrmgr.cpp compress.cpp fcisep.cpp grsearch.cpp intap.cpp mxf.cpp strcomb.cpp wrapper.cpp
 
-
-
+gcc -fPIC -shared -o libcvrpsep_interface.so basegrph.cpp brnching.cpp combsep.cpp cutbase.cpp fcits.cpp hpmstar.cpp memmod.cpp newhtour.cpp strngcmp.cpp binpack.cpp capsep.cpp compcuts.cpp fcapfix.cpp glmsep.cpp htoursep.cpp mstarsep.cpp sort.cpp twomatch.cpp blocks.cpp cnstrmgr.cpp compress.cpp fcisep.cpp grsearch.cpp intap.cpp mxf.cpp strcomb.cpp capsep_separate_cap_cuts_cpluplus_wrapper.cpp
 
